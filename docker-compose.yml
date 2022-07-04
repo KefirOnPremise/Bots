@@ -1,8 +1,15 @@
 version: "3"
 
 services:
-  telegram_bot:
+
+  echo_bot:
     build:
-      context: ./TelegramBot
+      context: ./TelegramBots/EchoBot
     environment:
-      - TOKEN=${TELEGRAM_TOKEN}
+      - ECHO_BOT_TELEGRAM_TOKEN=${ECHO_BOT_TELEGRAM_TOKEN}
+
+  nopurpose_bot:
+    build:
+      context: ./TelegramBots/NoPurposeBot
+    environment:
+      - NOPURPOSE_BOT_TELEGRAM_TOKEN=${NOPURPOSE_BOT_TELEGRAM_TOKEN}
